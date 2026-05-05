@@ -1,0 +1,16 @@
+[Unit]
+Description=Musiqa Topuvchi Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/musiqa-bot
+ExecStart=/usr/bin/python3 /opt/musiqa-bot/main.py
+Restart=always
+RestartSec=5
+User=musiqa-bot
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
